@@ -1,0 +1,27 @@
+data:
+  raw_dir:      ~/UIE/experiments/datasets/UIEB/raw-890
+  ref_dir:      ~/UIE/experiments/datasets/UIEB/reference-890
+  split_dir:    ~/UIE/experiments/datasets/UIEB/splits
+  image_size:   256
+  num_workers:  4
+
+model:
+  base_channels: 64
+  blur_kernel:   21
+  blur_sigma:    3.0
+
+train:
+  epochs:        300
+  batch_size:    2
+  lr_g:          2.0e-4
+  lr_d:          2.0e-4
+  beta1:         0.5
+  beta2:         0.999
+  decay_start:   150
+  amp:           true
+  seed:          42
+  save_interval: 50
+  val_interval:  1
+
+paths:
+  output_dir:   runs/
