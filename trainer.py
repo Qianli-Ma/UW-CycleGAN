@@ -219,6 +219,11 @@ class UWCycleGANTrainer:
             self.scaler.scale(loss_d).backward()
             self.scaler.step(self.opt_d)
             self.scaler.update()
+            
+            peak = torch.cuda.max_memory_allocated() / 1024**3
+            print(f"Peak training VRAM: {peak:.3f} GB")
+            torch.cuda.reset_peak_memory_stats()
+
 
             batch_stats = {
                 "loss_g": loss_g.item(),

@@ -6,6 +6,7 @@ from typing import Any
 
 import torch
 import yaml
+import time
 
 from trainer import UWCycleGANTrainer, expand_path
 
@@ -37,4 +38,12 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    start_time = time.perf_counter()
     main()
+    end_time = time.perf_counter()
+    total_seconds = end_time - start_time
+    
+    minutes = total_seconds // 60
+    seconds = total_seconds % 60
+    print(f"Training took {int(minutes)}m {seconds:.1f}s")
+

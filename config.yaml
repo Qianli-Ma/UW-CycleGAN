@@ -1,7 +1,7 @@
 data:
-  raw_dir:      ~/UIE/experiments/datasets/UIEB/raw-890
-  ref_dir:      ~/UIE/experiments/datasets/UIEB/reference-890
-  split_dir:    ~/UIE/experiments/datasets/UIEB/splits
+  raw_dir:      ../../../datasets/UIEB/raw-890
+  ref_dir:      ../../../datasets/UIEB/reference-890
+  split_dir:    ../../../datasets/UIEB/splits
   image_size:   256
   num_workers:  4
 
@@ -12,7 +12,7 @@ model:
 
 train:
   epochs:        300
-  batch_size:    2
+  batch_size:    16
   lr_g:          2.0e-4
   lr_d:          2.0e-4
   beta1:         0.5
